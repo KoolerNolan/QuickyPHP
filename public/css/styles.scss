@@ -6,11 +6,12 @@
   --default-highlight-color-active: #D98324;
 }
 
-:root, [data-bs-theme=dark] {
+:root, [data-bs-theme="dark"] {
   --bs-link-color: #EA9010;
   --bs-link-hover-color: #D98324;
 }
 
+// Bootstrap adjustments
 .btn-primary {
   --bs-btn-bg: #D98324;
   --bs-btn-hover-bg: #EA9010;
@@ -21,14 +22,13 @@
   --bs-btn-active-border-color: #D98324;
   --bs-btn-disabled-border-color: #D98324;
 }
-
 .navbar-nav {
   --bs-nav-link-color: #FFF;
 }
-
 .nav-pills {
   --bs-nav-pills-link-active-bg: #D98324;
 }
+// end
 
 h1,
 h2,
@@ -54,5 +54,3 @@ a,
 li {
   text-decoration: none;
 }
-
-/*# sourceMappingURL=styles.css.map */

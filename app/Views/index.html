@@ -14,14 +14,13 @@
     <!-- Core theme CSS (includes Bootstrap < It shouldn't)-->
     <link href="/css/styles.min.css" rel="stylesheet"/>
 </head>
-<body>
+<body data-bs-theme="dark">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
     <div class="container col-md-8 col-xl-6 mx-auto">
         <a class="navbar-brand" href="/">QuickyPHP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -35,10 +34,22 @@
 <!-- Hero section -->
 <section id="hero" class="px-4 py-5 my-5">
     <div class="col-md-8 col-xl-6 mx-auto">
-        <h1 class="mb-5 text-center">
-            <span class="display-2 fw-bold">QuickyPHP</span><br/>
-            <small class="text-muted">A handmade and lightweight php micro-framework</small>
-        </h1>
+        <div class="hero-unit d-flex flex-column mb-5">
+            <h1 class="mb-5 text-center">
+                <span class="display-2 fw-bold">QuickyPHP</span><br/>
+                <span class="d-block mt-3">
+                    <small class="text-muted">A handmade and lightweight php micro-framework</small>
+                </span>
+            </h1>
+            <p class="text-center">
+                <span class="d-block d-sm-inline-block p-1">
+                    <a class="btn btn-primary btn-lg w-100" href="#" role="button">Get started</a>
+                </span>
+                <span class="d-block d-sm-inline-block p-1">
+                    <a class="btn btn-secondary btn-lg w-100" href="#" role="button">Documentation</a>
+                </span>
+            </p>
+        </div>
         <p class="lead mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae forte-possumus.
             Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
@@ -117,7 +128,7 @@
             Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
             Illi enim inter se dissentiunt.
         </p>
-        <div class="row g-1 g-sm-2 g-md-3">
+        <div class="row g-2 g-md-3">
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card">
                     <div class="card-body">
