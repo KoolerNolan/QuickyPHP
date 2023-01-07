@@ -1,48 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta -->
-    <meta charset="UTF-8">
-    <title>Default Page</title>
-
-    <!-- Inline Style -->
-    <style>
-        body {
-            background: #ffffff;
-            font: 13px Helvetica, sans-serif;
-            color: gray;
-        }
-
-        h1 {
-            font-weight: normal;
-        }
-
-        .time {
-            margin: auto;
-            width: 50%;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .time-icon {
-            width: 20px;
-            transform: translateY(2px);
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>A quick and lightweight solution - QuickyPHP</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap < It shouldn't)-->
+    <link href="/css/styles.min.css" rel="stylesheet"/>
 </head>
 <body>
-<!-- Text -->
-<div class="time">
-    <h1>
-        <svg fill="gray" class="time-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
-            <path d="M432 304c0 114.9-93.1 208-208 208S16 418.9 16 304c0-104 76.3-190.2 176-205.5V64h-28c-6.6 0-12-5.4-12-12V12c0-6.6 5.4-12 12-12h120c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-28v34.5c37.5 5.8 71.7 21.6 99.7 44.6l27.5-27.5c4.7-4.7 12.3-4.7 17 0l28.3 28.3c4.7 4.7 4.7 12.3 0 17l-29.4 29.4-.6.6C419.7 223.3 432 262.2 432 304zm-176 36V188.5c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12V340c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12z"/>
-        </svg>
-        took %P_TIME_S% sec
-    </h1>
-</div>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container col-md-8 col-xl-6 mx-auto">
+        <a class="navbar-brand" href="/">QuickyPHP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto gx-3">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Documentation</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Hero section -->
+<section id="hero" class="px-4 py-5 my-5">
+    <div class="col-md-8 col-xl-6 mx-auto">
+        <h1 class="mb-5 text-center">
+            <span class="display-2 fw-bold">QuickyPHP</span><br/>
+            <small class="text-muted">A handmade and lightweight php micro-framework</small>
+        </h1>
+        <p class="lead mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae forte-possumus.
+            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+            interrete.
+            Non autem hoc: igitur ne illud quidem.
+            Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+            Illi enim inter se dissentiunt.
+        </p>
+        <div class="card text-left">
+            <div class="card-body">
+                <p>
+                    <code>
+                        require __DIR__ . '/../vendor/autoload.php';
+                        <br/>
+                        <var>$app</var> = Quicky::create();
+                        <br/>
+                        <var>$app</var>->get('/', function (Request <var>$request</var>, Response <var>$response</var>) {<br/>
+                        <var>$response</var>->send("Hello World!");<br/>
+                        });
+                        <br/>
+                        <var>$app</var>->run();
+                    </code>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="d-block w-100 my-5"></div>
+    <div class="col-md-8 col-xl-6 mx-auto">
+        <h2 class="mb-3 display-6 text-center fw-bold">Download & Installation</h2>
+        <p class="lead mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae forte-possumus.
+            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+            interrete.
+            Non autem hoc: igitur ne illud quidem.
+            Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+            Illi enim inter se dissentiunt.
+        </p>
+        <div class="card">
+            <div class="card-body">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item w-50" role="presentation">
+                        <button class="nav-link w-100 active" id="pills-composer-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-composer" type="button" role="tab" aria-controls="pills-composer"
+                                aria-selected="true">Composer
+                        </button>
+                    </li>
+                    <li class="nav-item w-50" role="presentation">
+                        <button class="nav-link w-100" id="pills-github-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-github" type="button" role="tab" aria-controls="pills-github"
+                                aria-selected="false">GitHub
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content text-center" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-composer" role="tabpanel"
+                         aria-labelledby="pills-composer-tab">
+                        <p class="card-text">$ <code>composer create-project david-prv/quickyphp</code></p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-github" role="tabpanel" aria-labelledby="pills-github-tab">
+                        <p class="card-text">$ <code>git clone https://github.com/david-prv/QuickyPHP.git</code></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Features section -->
+<section id="features" class="px-4 pb-5 my-5">
+    <div class="col-md-8 col-xl-6 mx-auto">
+        <h2 class="mb-3 display-6 fw-bold text-center">Features</h2>
+        <p class="lead mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae forte-possumus.
+            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+            interrete.
+            Non autem hoc: igitur ne illud quidem.
+            Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+            Illi enim inter se dissentiunt.
+        </p>
+        <div class="row g-1 g-sm-2 g-md-3">
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Performance</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-sm-none w-100"></div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Middleware</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-sm-none w-100"></div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Routing</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-sm-none w-100"></div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Extensible</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-sm-none w-100"></div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Easy to setup</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-sm-none w-100"></div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Lightweight</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="border-top">
+    <div class="container px-4 px-lg-5 py-3">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="small text-center text-muted">
+                    This site is hosted with &#10084; by <strong>QuickyPHP</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap JS -->
+<script src="/js/bootstrap.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
 </body>
 </html>
