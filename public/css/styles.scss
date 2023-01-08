@@ -4,15 +4,6 @@
   --default-highlight-color: #588B8B;
   --default-highlight-color-second: #EA9010;
   --default-highlight-color-active: #D98324;
-  // Bootstrap adjustements
-  --bs-code-color: #EBEBD3;
-  // Code snippets variables
-  --color-prettylights-syntax-keyword: #ff7b72;
-  --color-prettylights-syntax-string: #a5d6ff;
-  --color-prettylights-syntax-variable: #ffa657;
-  --color-prettylights-syntax-constant: #79c0ff;
-  --color-prettylights-syntax-entity: #d2a8ff;
-  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
 }
 
 :root, [data-bs-theme="dark"] {
@@ -61,41 +52,9 @@
 }
 // end
 
-// Code snippets styling
-.code-snippet pre {
-  word-wrap: normal;
-  margin-bottom: 0;
-  padding: 21px;
-}
-.code-snippet.highlight pre {
-  word-break: normal;
-}
-.code-snippet pre,
-.code-snippet.highlight pre {
-  font-size: 85%;
-  line-height: 1.45;
-}
-
-.pl-k {
-  color: var( --color-prettylights-syntax-keyword, #ff7b72 );
-}
-.pl-s {
-  color: var( --color-prettylights-syntax-string, #a5d6ff );
-}
-.pl-smi,
-.pl-s .pl-s1 {
-  color: var( --color-prettylights-syntax-storage-modifier-import, #c9d1d9 );
-}
-.pl-v {
-  color: var( --color-prettylights-syntax-variable, #ffa657 );
-}
-.pl-c1,
-.pl-s .pl-v {
-  color: var( --color-prettylights-syntax-constant, #79c0ff );
-}
-.pl-e,
-.pl-en {
-  color: var( --color-prettylights-syntax-entity, #d2a8ff );
+// highlight.js adjustments
+.hljs {
+  background: transparent;
 }
 // end
 

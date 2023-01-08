@@ -11,6 +11,10 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="/js/highlight/styles/github-dark.min.css"/>
+    <script type="text/javascript" src="/js/highlight/highlight.min.js"></script>
+    <script type="text/javascript">hljs.highlightAll();</script>
     <!-- Core theme CSS (includes Bootstrap < It shouldn't) -->
     <link href="/css/styles.min.css" rel="stylesheet"/>
 </head>
@@ -59,27 +63,20 @@
             Illi enim inter se dissentiunt.
         </p>
         <div class="card text-left">
-            <div class="position-relative overflow-auto card-body code-snippet highlight">
-<pre><code><span class="pl-k">require</span> __DIR__ . "<span class="pl-s">/../vendor/autoload.php</span>";
+            <div class="card-body">
+<pre><code>require __DIR__ . "/../vendor/autoload.php";
 
-<span class="pl-k">use</span> <span class="pl-v">App</span>\<span class="pl-v">Http</span>\<span
-        class="pl-v">Request</span>;
-<span class="pl-k">use</span> <span class="pl-v">App</span>\<span class="pl-v">Http</span>\<span
-        class="pl-v">Response</span>;
-<span class="pl-k">use</span> <span class="pl-v">App</span>\<span class="pl-v">Quicky</span>;
+use App\Http\Request;
+use App\Http\Response;
+use App\Quicky;
 
-<span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-v">Quicky</span>::<span class="pl-en">create</span>();
+$app = Quicky::create();
 
-<span class="pl-v">Quicky</span>::<span class="pl-en">route</span>("<span class="pl-s">GET</span>", "<span class="pl-s">/</span>", <span
-        class="pl-k">function</span>(<span class="pl-smi"><span class="pl-smi">Request</span></span> <span
-        class="pl-s1"><span
-        class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span
-        class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">send</span>("<span
-        class="pl-s">Hello World</span>");
+Quicky::route("GET", "/", function(Request $request, Response $response) {
+    $response->send("Hello World");
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>app</span>-&gt;<span class="pl-en">run</span>();</code></pre>
+$app->run();</code></pre>
             </div>
         </div>
     </div>
@@ -112,10 +109,10 @@
                 <div class="tab-content text-center py-4" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-composer" role="tabpanel"
                          aria-labelledby="pills-composer-tab">
-                        <p class="card-text">$ <code>composer create-project david-prv/quickyphp</code></p>
+                        <pre class="card-text"><code class="language-plaintext">$ composer create-project david-prv/quickyphp</code></pre>
                     </div>
                     <div class="tab-pane fade" id="pills-github" role="tabpanel" aria-labelledby="pills-github-tab">
-                        <p class="card-text">$ <code>git clone https://github.com/david-prv/QuickyPHP.git</code></p>
+                        <pre class="card-text"><code class="language-plaintext">$ git clone https://github.com/david-prv/QuickyPHP.git</code></pre>
                     </div>
                 </div>
             </div>
