@@ -95,7 +95,9 @@ class Quicky
         DynamicLoader::getLoader()->registerInstance(Quicky::class, $this);
         $config = DynamicLoader::getLoader()->getInstance(Config::class);
 
-        if ($mode === "") $mode = "default";
+        if ($mode === "") {
+            $mode = "default";
+        }
 
         if (!is_null($config) && $config instanceof Config) {
             $config->init($mode);
@@ -104,8 +106,13 @@ class Quicky
             // enable error catching for production or
             // iff parameter is set
             if ($this->config->isProd() || $catchErrors) {
-                set_error_handler(function (string $error_level, string $error_message, string $error_file, string $error_line) {
-                    return $this->catchError($error_level, $error_message, $error_file, $error_line);
+                set_error_handler(function (
+                    string $errorLevel,
+                    string $errorMessage,
+                    string $errorFile,
+                    string $errorLine
+                ) {
+                    return $this->catchError($errorLevel, $errorMessage, $errorFile, $errorLine);
                 });
                 set_exception_handler(function (Throwable $e) {
                     return $this->catchException($e);
@@ -169,8 +176,9 @@ class Quicky
 
             if ($router instanceof Router) {
                 $router(new Request(), new Response());
-            } else $this->stop(1);
-
+            } else {
+                $this->stop(1);
+            }
         } catch (UnknownRouteException $e) {
             $this->catchException($e);
         }
@@ -190,16 +198,19 @@ class Quicky
      * Basic error handler for production.
      * Catches all types of errors.
      *
-     * @param string $error_level
-     * @param string $error_message
-     * @param string $error_file
-     * @param string $error_line
+     * @param string $errorLevel
+     * @param string $errorMessage
+     * @param string $errorFile
+     * @param string $errorLine
      * @return callable|null ?callable
      */
-    private function catchError(string $error_level, string $error_message, string $error_file,
-                                string $error_line): ?callable
-    {
-        View::error($error_level, $error_message, $error_file, $error_line);
+    private function catchError(
+        string $errorLevel,
+        string $errorMessage,
+        string $errorFile,
+        string $errorLine
+    ): ?callable {
+        View::error($errorLevel, $errorMessage, $errorFile, $errorLine);
         return null;
     }
 

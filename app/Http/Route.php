@@ -52,13 +52,16 @@ class Route
      * @param callable $callback
      * @param array $middleware
      */
-    public function __construct(string $method, string $pattern, callable $callback,
-                                array $middleware)
-    {
+    public function __construct(
+        string $method,
+        string $pattern,
+        callable $callback,
+        array $middleware
+    ) {
         $this->method = $method;
         $this->pattern = $pattern;
         $this->callback = $callback;
-        $this->middleware = (is_null($middleware)) ? [] : $middleware;
+        $this->middleware = $middleware;
     }
 
     /**
@@ -124,6 +127,63 @@ class Route
     }
 
     /**
+     * Returns a sanitized array of the
+     * requested pattern
+     *
+     * @param string $pattern
+     * @return array
+     */
+    private function getSanitizedPatternArray(string $pattern): array
+    {
+        return array_filter(explode("/", $pattern), function ($e) {
+            return $e !== "" && $e !== null;
+        });
+    }
+
+    /**
+     * Finds the correct Regex pattern
+     *
+     * @param array $pattern
+     * @return string
+     */
+    private function getUrlMatchingRegex(array $pattern): string
+    {
+        $regex = '';
+        foreach ($pattern as $part) {
+            if (preg_match("/^{.*}$/", $part)) {
+                $regex .= '\/([^\/]+)';
+            } elseif (preg_match("/^\(.*\)$/", $part)) {
+                $part = str_replace(["(", ")"], "", $part);
+                $regex .= "\/$part";
+            } elseif ($part === '*') {
+                $regex .= '\/.*';
+            } else {
+                $regex .= "\/$part";
+            }
+        }
+        return '/^' . $regex . '$/';
+    }
+
+    /**
+     * Parses all named variables from URL
+     *
+     * @param array $pattern
+     * @param array $urlParts
+     * @return array
+     */
+    private function getUrlVariableValues(array $pattern, array $urlParts): array
+    {
+        $values = array();
+        foreach ($pattern as $i => $part) {
+            if (preg_match("/^{.*}$/", $part)) {
+                $varName = str_replace(["{", "}"], "", $part);
+                $values[$varName] = $urlParts[$i];
+            }
+        }
+        return $values;
+    }
+
+    /**
      * Checks if the requested url
      * matches this route and additionally parses
      * all arguments and updates the request, iff vars are present
@@ -134,39 +194,20 @@ class Route
      */
     public function match(string $url, Request $request): bool
     {
-        $pattern = array_filter(explode("/", $this->pattern), function ($e) {
-            return $e !== "" && $e !== null;
-        });
-        $urlParts = array_filter(explode("/", $url), function ($e) {
-            return $e !== "" && $e !== null;
-        });
+        $pattern = $this->getSanitizedPatternArray($this->pattern);
+        $urlParts = $this->getSanitizedPatternArray($url);
 
         if (count($pattern) !== count($urlParts)) {
             return false;
         }
 
-        $values = array();
-        for ($i = 1; $i < count($pattern) + 1; $i++) {
-            // Check if the pattern is a variable
-            if (preg_match("/^{.*}$/", $pattern[$i])) {
-                $varName = str_replace(["{", "}"], "", $pattern[$i]);
-                $values[$varName] = $urlParts[$i];
-            } // Check if the pattern is a regex
-            elseif (preg_match("/^\(.*\)$/", $pattern[$i])) {
-                $pattern[$i] = str_replace(["(", ")"], "", $pattern[$i]);
-                if (!preg_match("/$pattern[$i]/", $urlParts[$i])) {
-                    return false;
-                }
-            } // Check if the pattern is a wildcard
-            elseif ($pattern[$i] === "*") {
-                continue;
-            } // If none of the above, check for an exact match
-            elseif ($pattern[$i] !== $urlParts[$i]) {
-                return false;
-            }
+        $regex = $this->getUrlMatchingRegex($pattern);
+        if (!preg_match($regex, $url)) {
+            return false;
         }
+
+        $values = $this->getUrlVariableValues($pattern, $urlParts);
         $request->setArgs($values);
         return true;
     }
-
 }

@@ -52,6 +52,7 @@ class RateLimitMiddleware implements MiddlewareInterface
     /**
      * Run middleware
      *
+     * @SuppressWarnings(PHPMD.Superglobals)
      * @param Request $request
      * @param Response $response
      * @param callable $next
@@ -62,7 +63,9 @@ class RateLimitMiddleware implements MiddlewareInterface
         // skip if session is inactive
         $session = DynamicLoader::getLoader()->getInstance(SessionManager::class);
         if ($session instanceof SessionManager) {
-            if (!$session->isActive()) return $next($request, $response);
+            if (!$session->isActive()) {
+                return $next($request, $response);
+            }
         }
 
         $ipAddress = $request->getRemote()[0];

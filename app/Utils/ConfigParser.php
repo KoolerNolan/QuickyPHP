@@ -49,8 +49,10 @@ class ConfigParser
     {
         $expectedPath = getcwd() . "/app/config.json";
         if (is_file($expectedPath)) {
-            $json = (array)json_decode(file_get_contents($expectedPath), true);
-            if (is_null($json) || $json === false) throw new ConfigParserException();
+            $json = json_decode(file_get_contents($expectedPath), true);
+            if (is_null($json) || $json === false) {
+                throw new ConfigParserException();
+            }
 
             return $json;
         } else {
