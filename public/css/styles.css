@@ -38,6 +38,27 @@
   --bs-nav-pills-link-active-bg: #D98324;
 }
 
+.my-6 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.mt-6 {
+  margin-top: 4rem;
+}
+
+.mb-6 {
+  margin-bottom: 4rem;
+}
+
+.mt-7 {
+  margin-top: 6rem;
+}
+
+.mb-7 {
+  margin-bottom: 6rem;
+}
+
 .code-snippet pre {
   word-wrap: normal;
   margin-bottom: 0;
