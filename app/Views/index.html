@@ -35,35 +35,38 @@
         </div>
     </div>
 </nav>
-<!-- Hero section -->
-<section id="hero" class="px-4 py-5 my-5">
-    <div class="col-md-8 col-xl-6 mx-auto">
-        <div class="hero-unit d-flex flex-column mb-6">
-            <h1 class="mb-5 text-center">
-                <span class="display-2 fw-bold">QuickyPHP</span><br/>
-                <span class="d-block mt-3">
-                    <small class="text-muted">A handmade and lightweight php micro-framework</small>
-                </span>
-            </h1>
-            <p class="text-center">
-                <span class="d-block d-sm-inline-block p-1">
-                    <a class="btn btn-primary btn-lg w-100" href="/doc#get-started" role="button">Get started</a>
-                </span>
-                <span class="d-block d-sm-inline-block p-1">
-                    <a class="btn btn-secondary btn-lg w-100" href="/doc" role="button">Documentation</a>
-                </span>
+<!-- Main -->
+<main role="main">
+    <!-- Hero section -->
+    <section id="hero" class="px-4 py-5 my-5">
+        <div class="col-md-8 col-xl-6 mx-auto">
+            <div class="hero-unit d-flex flex-column mb-6">
+                <h1 class="mb-5 text-center">
+                    <span class="display-2 fw-bold">QuickyPHP</span><br/>
+                    <span class="d-block mt-3">
+                        <small class="text-muted">A handmade and lightweight php micro-framework</small>
+                    </span>
+                </h1>
+                <p class="text-center">
+                    <span class="d-block d-sm-inline-block p-1">
+                        <a class="btn btn-primary btn-lg w-100" href="/doc#hero" role="button">Get started</a>
+                    </span>
+                    <span class="d-block d-sm-inline-block p-1">
+                        <a class="btn btn-secondary btn-lg w-100" href="/doc" role="button">Documentation</a>
+                    </span>
+                </p>
+            </div>
+            <p class="lead mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                forte-possumus.
+                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                interrete.
+                Non autem hoc: igitur ne illud quidem.
+                Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+                Illi enim inter se dissentiunt.
             </p>
-        </div>
-        <p class="lead mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae forte-possumus.
-            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
-            interrete.
-            Non autem hoc: igitur ne illud quidem.
-            Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
-            Illi enim inter se dissentiunt.
-        </p>
-        <div class="card text-left">
-            <div class="card-body">
+            <div class="card text-left">
+                <div class="card-body">
 <pre><code>require __DIR__ . "/../vendor/autoload.php";
 
 use App\Http\Request;
@@ -77,144 +80,154 @@ Quicky::route("GET", "/", function(Request $request, Response $response) {
 });
 
 $app->run();</code></pre>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-8 col-xl-6 mx-auto mt-7">
-        <h2 class="mb-3 display-6 text-center fw-bold">Download & Installation</h2>
-        <p class="lead mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae forte-possumus.
-            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
-            interrete.
-            Non autem hoc: igitur ne illud quidem.
-            Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
-            Illi enim inter se dissentiunt.
-        </p>
-        <div class="card">
-            <div class="card-body">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item w-50" role="presentation">
-                        <button class="nav-link w-100 active" id="pills-composer-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-composer" type="button" role="tab" aria-controls="pills-composer"
-                                aria-selected="true">Composer
-                        </button>
-                    </li>
-                    <li class="nav-item w-50" role="presentation">
-                        <button class="nav-link w-100" id="pills-github-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-github" type="button" role="tab" aria-controls="pills-github"
-                                aria-selected="false">GitHub
-                        </button>
-                    </li>
-                </ul>
-                <div class="tab-content text-center py-4" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-composer" role="tabpanel"
-                         aria-labelledby="pills-composer-tab">
-                        <pre class="card-text"><code class="language-plaintext">$ composer create-project david-prv/quickyphp</code></pre>
-                    </div>
-                    <div class="tab-pane fade" id="pills-github" role="tabpanel" aria-labelledby="pills-github-tab">
-                        <pre class="card-text"><code class="language-plaintext">$ git clone https://github.com/david-prv/QuickyPHP.git</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<div class="col-md-8 col-xl-6 mx-auto my-6">
-    <hr class="d-block w-100"/>
-</div>
-<!-- Features section -->
-<section id="features" class="px-4 py-5">
-    <div class="col-md-8 col-xl-6 mx-auto">
-        <h2 class="mb-3 display-6 fw-bold text-center">Features</h2>
-        <p class="lead mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae forte-possumus.
-            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
-            interrete.
-            Non autem hoc: igitur ne illud quidem.
-            Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
-            Illi enim inter se dissentiunt.
-        </p>
-        <div class="row g-2 g-md-3">
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Performance</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
-                            forte-possumus.
-                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-block d-sm-none w-100"></div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Middleware</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
-                            forte-possumus.
-                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-block d-sm-none w-100"></div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Routing</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
-                            forte-possumus.
-                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-block d-sm-none w-100"></div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Extensible</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
-                            forte-possumus.
-                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-block d-sm-none w-100"></div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Easy to setup</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
-                            forte-possumus.
-                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-block d-sm-none w-100"></div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Lightweight</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
-                            forte-possumus.
-                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
-                        </p>
+        <div class="col-md-8 col-xl-6 mx-auto mt-7">
+            <h2 class="mb-3 display-6 text-center fw-bold">Download & Installation</h2>
+            <p class="lead mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                forte-possumus.
+                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                interrete.
+                Non autem hoc: igitur ne illud quidem.
+                Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+                Illi enim inter se dissentiunt.
+            </p>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item w-50" role="presentation">
+                            <button class="nav-link w-100 active" id="pills-composer-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-composer" type="button" role="tab"
+                                    aria-controls="pills-composer"
+                                    aria-selected="true">Composer
+                            </button>
+                        </li>
+                        <li class="nav-item w-50" role="presentation">
+                            <button class="nav-link w-100" id="pills-github-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-github" type="button" role="tab" aria-controls="pills-github"
+                                    aria-selected="false">GitHub
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content text-center py-4" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-composer" role="tabpanel"
+                             aria-labelledby="pills-composer-tab">
+                            <pre class="card-text"><code class="language-plaintext">$ composer create-project david-prv/quickyphp</code></pre>
+                        </div>
+                        <div class="tab-pane fade" id="pills-github" role="tabpanel" aria-labelledby="pills-github-tab">
+                            <pre class="card-text"><code class="language-plaintext">$ git clone https://github.com/david-prv/QuickyPHP.git</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <div class="col-md-8 col-xl-6 mx-auto my-6">
+        <hr class="d-block w-100"/>
     </div>
-</section>
+    <!-- Features section -->
+    <section id="features" class="px-4 py-5">
+        <div class="col-md-8 col-xl-6 mx-auto">
+            <h2 class="mb-3 display-6 fw-bold text-center">Features</h2>
+            <p class="lead mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                forte-possumus.
+                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                interrete.
+                Non autem hoc: igitur ne illud quidem.
+                Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+                Illi enim inter se dissentiunt.
+            </p>
+            <div class="row g-2 g-md-3">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">Performance</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
+                                quae
+                                forte-possumus.
+                                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-block d-sm-none w-100"></div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">Middleware</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
+                                quae
+                                forte-possumus.
+                                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-block d-sm-none w-100"></div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">Routing</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
+                                quae
+                                forte-possumus.
+                                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-block d-sm-none w-100"></div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">Extensible</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
+                                quae
+                                forte-possumus.
+                                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-block d-sm-none w-100"></div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">Easy to setup</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
+                                quae
+                                forte-possumus.
+                                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-block d-sm-none w-100"></div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">Lightweight</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
+                                quae
+                                forte-possumus.
+                                Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 <!-- Footer -->
 <footer class="border-top mt-7">
     <div class="container px-4 px-lg-5 py-3">
