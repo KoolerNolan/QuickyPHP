@@ -15,3 +15,12 @@ Quicky::route("GET", "/", function (Request $_, Response $response) {
 
     return $response;
 });
+
+Quicky::route("GET", "/doc", function (Request $_, Response $response) {
+    $delay = number_format(microtime(true) - Quicky::session()->getCreatedAt(), 5);
+    $response->render("doc", array(
+        "P_TIME_S" => $delay
+    ));
+
+    return $response;
+});
