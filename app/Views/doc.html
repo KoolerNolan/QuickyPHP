@@ -27,9 +27,9 @@
                 <div class="card w-100">
                     <div class="card-body">
                         <ul class="navbar-nav px-2">
-                            <li class="nav-item"><a class="nav-link" href="#">Get started</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Download & Installation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Lorem</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#hero">Get started</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#di-guide">Download & Installation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#doc-global-methods">Global methods</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Ipsum</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Dolor</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Sit</a></li>
@@ -82,14 +82,14 @@ use App\Quicky;
 $app = Quicky::create();
 
 Quicky::route("GET", "/", function(Request $request, Response $response) {
-$response->send("Hello World");
+    $response->send("Hello World");
 });
 
 $app->run();</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="mt-7 download-installation-guide">
+            <div class="mt-7 download-installation-guide" id="di-guide">
                 <h2 class="mb-3 display-6 text-center fw-bold">Download & Installation</h2>
                 <p class="lead mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
@@ -132,9 +132,203 @@ $app->run();</code></pre>
                 </div>
             </div>
         </section>
+        <div class="my-6">
+            <hr class="d-block w-100"/>
+        </div>
         <!-- Documentation main section -->
         <section id="doc-main" class="px-4 py-5 my-5">
+            <div class="doc-article" id="doc-global-methods">
+                <h2 class="mb-3 text-center fw-bold">Global methods</h2>
+                <p class="lead mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                    forte-possumus.
+                    Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                    interrete.
+                    Non autem hoc: igitur ne illud quidem.
+                    Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+                    Illi enim inter se dissentiunt.
+                </p>
+                <div class="card text-left">
+                    <div class="card-body">
+<pre><code>
+/* Functionality */
+Quicky::create(bool $catchErrors = false, string $mode = ""): Quicky; // creates Quicky instance
+Quicky::use(array $settings): void; // set custom settings
+Quicky::route(string $method, string $pattern, callable $callback, ...$middleware): void; // adds a new route
+Quicky::render(string $viewName, ?array $params = null): void // render a view
 
+/* Components */
+Quicky::router(): Router; // returns Router
+Quicky::config(): Config; // returns Config
+Quicky::view(): View; // returns View
+Quicky::session(): SessionManager; // returns SessionManager
+Quicky::cookies(): CookieManager; // returns CookieManager
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-article" id="doc-create-app">
+                <h2 class="mb-3 text-center fw-bold">Create an application</h2>
+                <p class="lead mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                    forte-possumus.
+                    Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                    interrete.
+                    Non autem hoc: igitur ne illud quidem.
+                    Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+                    Illi enim inter se dissentiunt.
+                </p>
+                <div class="card text-left">
+                    <div class="card-body">
+<pre><code>
+require __DIR__ . "/../vendor/autoload.php";
+
+use App\Http\Request;
+use App\Http\Response;
+use App\Quicky;
+
+$app = Quicky::create();
+
+/* A basic app example */
+
+Quicky::route("GET", "/profile/{id}", function(Request $request, Response $response) {
+    $userData = SomeController::findUserById($request->getArg("id"));
+    $response->render('profile', array(
+        "USER_NAME" => $userData["userName"],
+        "USER_NICK" => $userData["userNick"],
+        "USER_ID" => $userData["userID"],
+        "USER_PROFILE_PIC" => $userData["userProfilePic"]
+    ));
+});
+
+$app->run();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-article" id="doc-middleware">
+                <div class="mb-6 doc-article-introduction">
+                    <h2 class="mb-3 text-center fw-bold">How to use Middleware</h2>
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                        forte-possumus.
+                        Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                        interrete.
+                        Non autem hoc: igitur ne illud quidem.
+                        Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+                        Illi enim inter se dissentiunt.
+                    </p>
+                </div>
+                <div class="doc-article-inner">
+                    <div class="doc-sub-article">
+                        <h3 class="mb-2 text-center fw-bold">CSRF Middleware</h3>
+                        <p class="lead mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges:
+                            constructio interrete.
+                        </p>
+                        <div class="card text-left">
+                            <div class="card-body">
+<pre><code>
+require __DIR__ . "/../vendor/autoload.php";
+
+use App\Http\Request;
+use App\Http\Response;
+use App\Quicky;
+
+$app = Quicky::create();
+Quicky::session()->start();
+
+/* A basic authentication */
+
+Quicky::route("GET", "/login", function(Request $request, Response $response) {
+    $response->render('login', array(
+        "CSRF_TOKEN" => Quicky::session()->generateCSRFToken()
+    ));
+});
+
+Quicky::route("POST", "/login", function(Request $request, Response $response) {
+    $loggedIn = SomeController::logIn($request->getData());
+    if ($loggedIn) {
+        $response->redirect('/your-account');
+    } else {
+        $response->forbidden("Wrong credentials");
+    }
+}, new CSRFMiddleware());
+
+$app->run();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doc-sub-article">
+                        <h3 class="mb-2 text-center fw-bold">CORS Middleware</h3>
+                        <p class="lead mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges:
+                            constructio interrete.
+                        </p>
+                        <div class="card text-left">
+                            <div class="card-body">
+<pre><code>
+require __DIR__ . "/../vendor/autoload.php";
+
+use App\Http\Request;
+use App\Http\Response;
+use App\Quicky;
+
+$app = Quicky::create();
+
+// apply cors middleware to all routes
+Quicky::use(["middleware" => [new CORSMiddleware()]]);
+
+// define routes...
+
+$app->run();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doc-sub-article">
+                        <h3 class="mb-2 text-center fw-bold">Rate-Limit Middleware</h3>
+                        <p class="lead mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                            forte-possumus.
+                            Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges:
+                            constructio interrete.
+                        </p>
+                        <div class="card text-left">
+                            <div class="card-body">
+<pre><code>
+require __DIR__ . "/../vendor/autoload.php";
+
+use App\Http\Request;
+use App\Http\Response;
+use App\Quicky;
+
+$app = Quicky::create();
+
+// this will be a very slow route, which allows only
+// one request per 5 seconds. If you try to access it more often
+// you will be time-limited.
+Quicky::route("GET", "/this-is-a-slow-route", function(Request $request, Response $response) {
+    $response->send("Congrats! You accessed this route!");
+}, new RateLimitMiddleware(1, 5));
+
+// this route will be accessible with no time-limitations
+Quicky::route("GET", "/this-is-speed", function(Request $request, Response $response) {
+    $response->send("Not very special to see this page...");
+});
+
+$app->run();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <!-- Pseudo -->

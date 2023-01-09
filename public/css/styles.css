@@ -81,4 +81,19 @@ li {
   text-decoration: none;
 }
 
+.doc-article {
+  margin-bottom: 4rem;
+}
+
+.doc-article-inner .doc-sub-article {
+  margin-bottom: 3rem;
+}
+.doc-article-inner .doc-sub-article:last-child {
+  margin-bottom: 0;
+}
+
+.doc-article:last-child {
+  margin-bottom: 0;
+}
+
 /*# sourceMappingURL=styles.css.map */
