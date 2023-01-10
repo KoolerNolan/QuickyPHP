@@ -16,4 +16,6 @@ jobs:
       - name: PHPStan Static Analysis
         uses: php-actions/phpstan@v3
         with:
+          args: --debug
+          memory_limit: 256M
           path: app/
