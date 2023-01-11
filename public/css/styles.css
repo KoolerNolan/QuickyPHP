@@ -86,6 +86,11 @@
     margin-top: 4rem !important;
   }
 }
+@media only screen and (min-width: 400px) {
+  .w-xsm-50 {
+    width: 50% !important;
+  }
+}
 .hljs {
   background: transparent;
 }
@@ -225,7 +230,7 @@ li {
     transform: scale(0.3);
   }
 }
-#doc-main-nav-mobile {
+#doc-main-nav {
   position: relative;
   left: -250px;
   max-width: 300px;
@@ -234,7 +239,7 @@ li {
   pointer-events: all;
   transition: left 200ms ease-in;
 }
-#doc-main-nav-mobile::after {
+#doc-main-nav::after {
   content: "";
   position: absolute;
   top: 0;
@@ -269,10 +274,10 @@ li {
     opacity: 0.2;
   }
 }
-#doc-main-nav-mobile:hover {
+#doc-main-nav:hover {
   left: 0;
 }
-#doc-main-nav-mobile:hover::after {
+#doc-main-nav:hover::after {
   content: none;
 }
 
@@ -323,6 +328,26 @@ li {
     font-size: 1rem;
   }
 }
+@media only screen and (min-width: 1400px) {
+  #doc-main-nav {
+    left: 0;
+    max-width: 350px;
+    width: 350px;
+    padding-right: 0;
+  }
+  #doc-main-nav::after {
+    content: none;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #doc-main-nav {
+    left: 0;
+    padding-right: 0;
+  }
+  #doc-main-nav::after {
+    content: none;
+  }
+}
 @media only screen and (max-width: 900px) {
   .doc-article {
     margin-bottom: 2rem;
@@ -330,7 +355,7 @@ li {
   }
 }
 @media only screen and (max-width: 768px) {
-  #doc-main-nav-mobile {
+  #doc-main-nav {
     left: -280px;
     padding-right: 20px;
   }
@@ -378,13 +403,13 @@ li {
   }
 }
 @media only screen and (max-width: 500px) {
-  #doc-main-nav-mobile {
+  #doc-main-nav {
     left: -230px;
     max-width: 250px;
     width: 250px;
     padding-right: 20px;
   }
-  #doc-main-nav-mobile::after {
+  #doc-main-nav::after {
     width: 6px;
   }
 }

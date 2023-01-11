@@ -20,34 +20,11 @@
 </head>
 <body class="overflow-x-hidden" data-bs-theme="dark">
 <div class="row g-0">
-    <!-- Documentation navigation -->
-    <div class="d-none d-md-inline-block col-md-2 col-xl-3 p-3">
-        <header id="doc-main-nav" class="position-sticky top-0 d-none d-xl-block py-2 overflow-y-auto">
-            <nav class="navbar navbar-light">
-                <div class="card w-100">
-                    <div class="card-body">
-                        <ul class="navbar-nav navbar-parent-nav">
-                            <li class="nav-item"><a class="nav-link" href="#doc-get-started">Get started</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#doc-di-guide">Download & Installation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#doc-global-methods">Global methods</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#doc-create-app">Create an application</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#doc-middleware">How to use Middleware</a>
-                                <ul class="navbar-nav navbar-sub-nav">
-                                    <li class="nav-item"><a class="nav-link" href="#doc-middleware-csrf">CSRF Middleware</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#doc-middleware-cors">CORS Middleware</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#doc-middleware-rate-limit">Rate-Limit Middleware</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
+    <!-- Pseudo -->
+    <div class="d-none d-md-inline-block col-md-2 col-xl-3"></div>
     <!-- Documentation navigation mobile -->
-    <div class="position-fixed top-0 start-0 w-100 vh-100 d-block d-xl-none" style="z-index:999;pointer-events:none;">
-        <header id="doc-main-nav-mobile" class="h-100 border-right bg-body py-2 overflow-y-auto">
+    <div class="position-fixed top-0 start-0 w-100 vh-100" style="z-index:999;pointer-events:none;">
+        <header id="doc-main-nav" class="h-100 border-right bg-body py-2 overflow-y-auto">
             <ul class="navbar-nav navbar-parent-nav">
                 <li class="nav-item"><a class="nav-link" href="#doc-get-started">Get started</a></li>
                 <li class="nav-item"><a class="nav-link" href="#doc-di-guide">Download & Installation</a></li>
@@ -65,7 +42,7 @@
         </header>
     </div>
     <!-- Main -->
-    <main role="main" class="col col-md-8 col-xl-6 px-5 pr-4 px-md-4">
+    <main role="main" class="col col-md-8 px-5 pr-4 px-md-4">
         <!-- Documentation hero section -->
         <section id="hero" class="py-5">
             <div class="hero-unit">
@@ -132,14 +109,14 @@ $app->run();</code></pre>
                 <div class="card">
                     <div class="card-body">
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item w-50" role="presentation">
+                            <li class="nav-item w-100 w-xsm-50" role="presentation">
                                 <button class="nav-link w-100 active" id="pills-composer-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-composer" type="button" role="tab"
                                         aria-controls="pills-composer"
                                         aria-selected="true">Composer
                                 </button>
                             </li>
-                            <li class="nav-item w-50" role="presentation">
+                            <li class="nav-item w-100 w-xsm-50" role="presentation">
                                 <button class="nav-link w-100" id="pills-github-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-github" type="button" role="tab"
                                         aria-controls="pills-github"
@@ -366,7 +343,7 @@ $app->run();
         </section>
     </main>
     <!-- Pseudo -->
-    <div class="d-none d-md-inline-block col-md-2 col-xl-3"></div>
+    <div class="d-none d-md-inline-block col-2 col-xl-1"></div>
 </div>
 <!-- Footer -->
 <footer class="position-relative bg-body border-top mt-6" style="z-index:9999;">
