@@ -367,7 +367,7 @@ class Response
         }
 
         foreach ($this->headers as $header) {
-            header($header["name"]. ": " . $header["value"]);
+            header($header["name"] . ": " . $header["value"]);
         }
     }
 
@@ -404,6 +404,25 @@ class Response
             return;
         }
         $this->body .= sprintf($text, ...$formatters) . PHP_EOL;
+    }
+
+    /**
+     * Compress the response with gzencode.
+     * Should only be called as last statement in callback,
+     * before response is returned.
+     *
+     * @param int $level
+     */
+    public function compress(int $level = 6): void
+    {
+        $this->body = gzencode($this->body, $level);
+
+        $this->withHeader("Content-Type", "application/x-download");
+        $this->withHeader("Content-Encoding", "gzip");
+        $this->withHeader("Content-Length", (string)$this->getContentLength());
+        $this->withHeader("Content-Disposition", "attachment; filename='compressed.data.gz'");
+        $this->withHeader("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate");
+        $this->withHeader("Pragma", "no-cache");
     }
 
     /**
