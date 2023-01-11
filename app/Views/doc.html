@@ -22,44 +22,73 @@
 <div class="row g-0">
     <!-- Documentation navigation -->
     <div class="d-none d-md-inline-block col-md-2 col-xl-3 p-3">
-        <header id="doc-main-nav" class="position-sticky top-0 py-2">
+        <header id="doc-main-nav" class="position-sticky top-0 d-none d-xl-block py-2 overflow-y-auto">
             <nav class="navbar navbar-light">
                 <div class="card w-100">
                     <div class="card-body">
-                        <ul class="navbar-nav px-2">
-                            <li class="nav-item"><a class="nav-link" href="#hero">Get started</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#di-guide">Download & Installation</a></li>
+                        <ul class="navbar-nav navbar-parent-nav">
+                            <li class="nav-item"><a class="nav-link" href="#doc-get-started">Get started</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#doc-di-guide">Download & Installation</a></li>
                             <li class="nav-item"><a class="nav-link" href="#doc-global-methods">Global methods</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Ipsum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Dolor</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Sit</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Amet</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#doc-create-app">Create an application</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#doc-middleware">How to use Middleware</a>
+                                <ul class="navbar-nav navbar-sub-nav">
+                                    <li class="nav-item"><a class="nav-link" href="#doc-middleware-csrf">CSRF Middleware</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#doc-middleware-cors">CORS Middleware</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#doc-middleware-rate-limit">Rate-Limit Middleware</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
     </div>
+    <!-- Documentation navigation mobile -->
+    <div class="position-fixed top-0 start-0 w-100 vh-100 d-block d-xl-none" style="z-index:999;pointer-events:none;">
+        <header id="doc-main-nav-mobile" class="h-100 border-right bg-body py-2 overflow-y-auto">
+            <ul class="navbar-nav navbar-parent-nav">
+                <li class="nav-item"><a class="nav-link" href="#doc-get-started">Get started</a></li>
+                <li class="nav-item"><a class="nav-link" href="#doc-di-guide">Download & Installation</a></li>
+                <li class="nav-item"><a class="nav-link" href="#doc-global-methods">Global methods</a></li>
+                <li class="nav-item"><a class="nav-link" href="#doc-create-app">Create an application</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#doc-middleware">How to use Middleware</a>
+                    <ul class="navbar-nav navbar-sub-nav">
+                        <li class="nav-item"><a class="nav-link" href="#doc-middleware-csrf">CSRF Middleware</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#doc-middleware-cors">CORS Middleware</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#doc-middleware-rate-limit">Rate-Limit Middleware</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+    </div>
     <!-- Main -->
-    <main role="main" class="col-md-8 col-xl-6">
+    <main role="main" class="col col-md-8 col-xl-6 px-5 pr-4 px-md-4">
         <!-- Documentation hero section -->
-        <section id="hero" class="px-4 py-5 my-5">
-            <div class="hero-unit get-started">
-                <div class="d-flex flex-column mb-6">
-                    <h1 class="text-center mb-5">
-                        <span class="display-2 fw-bold">Get started</span><br/>
-                        <span class="d-block mt-3">
-                            <small class="text-muted">using QuickyPHP</small>
-                        </span>
-                    </h1>
-                    <p class="text-center">
-                        <span class="d-block d-sm-inline-block p-1">
-                            <a class="btn btn-primary btn-lg w-100" href="https://github.com/david-prv/QuickyPHP"
-                               target="_blank" rel="noopener" role="button">GitHub</a>
-                        </span>
-                        <span class="d-block d-sm-inline-block p-1">
-                            <a class="btn btn-secondary btn-lg w-100" href="/" role="button">Homepage</a>
-                        </span>
+        <section id="hero" class="py-5">
+            <div class="hero-unit">
+                <h1 class="fw-bold mb-4">QuickyPHP Documentation</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                    forte-possumus.
+                    Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                    interrete.
+                    Non autem hoc: igitur ne illud quidem.
+                    Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
+                    Illi enim inter se dissentiunt.
+                </p>
+            </div>
+            <div class="mt-5 pt-4 get-started" id="doc-get-started">
+                <div class="d-flex flex-column mb-3">
+                    <h2 class="mb-3 fw-bold">
+                        Getting started <small class="text-muted">using QuickyPHP</small>
+                    </h2>
+                    <p>
+                        <a class="btn btn-primary" href="https://github.com/david-prv/QuickyPHP"
+                           target="_blank" rel="noopener" role="button">GitHub</a>
+                        <a class="btn btn-secondary" href="/" role="button">Homepage</a>
                     </p>
                 </div>
                 <p class="lead mb-4">
@@ -89,8 +118,8 @@ $app->run();</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="mt-7 download-installation-guide" id="di-guide">
-                <h2 class="mb-3 display-6 text-center fw-bold">Download & Installation</h2>
+            <div class="mt-5 pt-4 download-installation-guide" id="doc-di-guide">
+                <h2 class="mb-3 fw-bold">Download & Installation</h2>
                 <p class="lead mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                     forte-possumus.
@@ -132,14 +161,14 @@ $app->run();</code></pre>
                 </div>
             </div>
         </section>
-        <div class="my-6">
+        <div class="my-4 my-md-5 my-xl-6">
             <hr class="d-block w-100"/>
         </div>
         <!-- Documentation main section -->
-        <section id="doc-main" class="px-4 py-5 my-5">
+        <section id="doc-main" class="py-5">
             <div class="doc-article" id="doc-global-methods">
-                <h2 class="mb-3 text-center fw-bold">Global methods</h2>
-                <p class="lead mb-4">
+                <h2 class="mb-3 fw-bold">Global methods</h2>
+                <p class="mb-4 lead">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                     forte-possumus.
                     Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
@@ -148,6 +177,10 @@ $app->run();</code></pre>
                     Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
                     Illi enim inter se dissentiunt.
                 </p>
+                <div class="alert alert-info" role="alert">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
+                    forte-possumus.
+                </div>
                 <div class="card text-left">
                     <div class="card-body">
 <pre><code>
@@ -168,7 +201,7 @@ Quicky::cookies(): CookieManager; // returns CookieManager
                 </div>
             </div>
             <div class="doc-article" id="doc-create-app">
-                <h2 class="mb-3 text-center fw-bold">Create an application</h2>
+                <h2 class="mb-3 fw-bold">Create an application</h2>
                 <p class="lead mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                     forte-possumus.
@@ -207,12 +240,13 @@ $app->run();
                 </div>
             </div>
             <div class="doc-article" id="doc-middleware">
-                <div class="mb-6 doc-article-introduction">
-                    <h2 class="mb-3 text-center fw-bold">How to use Middleware</h2>
+                <div class="mb-4 doc-article-introduction">
+                    <h2 class="mb-3 fw-bold">How to use Middleware</h2>
                     <p class="lead">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                         forte-possumus.
-                        Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
+                        Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges:
+                        constructio
                         interrete.
                         Non autem hoc: igitur ne illud quidem.
                         Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
@@ -220,8 +254,8 @@ $app->run();
                     </p>
                 </div>
                 <div class="doc-article-inner">
-                    <div class="doc-sub-article">
-                        <h3 class="mb-2 text-center fw-bold">CSRF Middleware</h3>
+                    <div class="doc-sub-article" id="doc-middleware-csrf">
+                        <h3 class="mb-2 fw-bold">CSRF Middleware</h3>
                         <p class="lead mb-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                             forte-possumus.
@@ -262,8 +296,8 @@ $app->run();
                             </div>
                         </div>
                     </div>
-                    <div class="doc-sub-article">
-                        <h3 class="mb-2 text-center fw-bold">CORS Middleware</h3>
+                    <div class="doc-sub-article" id="doc-middleware-cors">
+                        <h3 class="mb-2 fw-bold">CORS Middleware</h3>
                         <p class="lead mb-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                             forte-possumus.
@@ -291,8 +325,8 @@ $app->run();
                             </div>
                         </div>
                     </div>
-                    <div class="doc-sub-article">
-                        <h3 class="mb-2 text-center fw-bold">Rate-Limit Middleware</h3>
+                    <div class="doc-sub-article" id="doc-middleware-rate-limit">
+                        <h3 class="mb-2 fw-bold">Rate-Limit Middleware</h3>
                         <p class="lead mb-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                             forte-possumus.
@@ -335,14 +369,16 @@ $app->run();
     <div class="d-none d-md-inline-block col-md-2 col-xl-3"></div>
 </div>
 <!-- Footer -->
-<footer class="border-top mt-7">
+<footer class="position-relative bg-body border-top mt-6" style="z-index:9999;">
     <div class="container px-4 px-lg-5 py-3">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="small text-center text-muted">
-                    This site is hosted with &#10084; by <strong>QuickyPHP</strong>
-                </div>
-            </div>
+        <nav>
+            <p class="small text-center text-muted">
+                <a class="p-2" href="#">Imprint</a>
+                <a class="p-2" href="#">Legal notice</a>
+            </p>
+        </nav>
+        <div class="small text-center text-muted">
+            This site is hosted with &#10084; by <strong>QuickyPHP</strong>
         </div>
     </div>
 </footer>

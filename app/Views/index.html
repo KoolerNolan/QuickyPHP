@@ -36,18 +36,55 @@
     </div>
 </nav>
 <!-- Main -->
-<main role="main">
+<main role="main" class="px-4">
     <!-- Hero section -->
-    <section id="hero" class="px-4 py-5 my-5">
-        <div class="col-md-8 col-xl-6 mx-auto">
-            <div class="hero-unit d-flex flex-column mb-6">
-                <h1 class="mb-5 text-center">
-                    <span class="display-2 fw-bold">QuickyPHP</span><br/>
-                    <span class="d-block mt-3">
+    <section id="hero" class="position-relative py-5 mt-5">
+        <div class="position-relative col-md-8 col-xl-6 mx-auto">
+            <div class="position-relative hero-unit d-flex flex-column mb-6">
+                <div class="position-relative">
+                    <div class="position-absolute top-0 w-100 start-50 translate-middle-x hero-detail" style="z-index:0;">
+                        <div class="row g-0">
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="row g-0">
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="row g-0">
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="hero-detail-element sphere"><svg viewBox="0 0 1 1"></svg></div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <h1 class="position-relative mb-5 text-center" style="z-index:10;">
+                        <span class="display-2 fw-bold">QuickyPHP</span><br/>
+                        <span class="d-block mt-3 display-6">
                         <small class="text-muted">A handmade and lightweight php micro-framework</small>
                     </span>
-                </h1>
-                <p class="text-center">
+                    </h1>
+                </div>
+                <p class="position-relative text-center" style="z-index:10;">
                     <span class="d-block d-sm-inline-block p-1">
                         <a class="btn btn-primary btn-lg w-100" href="/doc#hero" role="button">Get started</a>
                     </span>
@@ -56,7 +93,7 @@
                     </span>
                 </p>
             </div>
-            <p class="lead mb-4">
+            <p class="position-relative lead mb-4" style="z-index:10;">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                 forte-possumus.
                 Ecce aliud simile dissimile. Huius ego nunc auctoritatem sequens idem faciam. Duo Reges: constructio
@@ -65,7 +102,7 @@
                 Non risu potius quam oratione eiciendum? Ne in odium veniam, si amicum destitero tueri.
                 Illi enim inter se dissentiunt.
             </p>
-            <div class="card text-left">
+            <div class="position-relative card text-left" style="z-index:10;">
                 <div class="card-body">
 <pre><code>require __DIR__ . "/../vendor/autoload.php";
 
@@ -83,8 +120,8 @@ $app->run();</code></pre>
                 </div>
             </div>
         </div>
-        <div class="col-md-8 col-xl-6 mx-auto mt-7">
-            <h2 class="mb-3 display-6 text-center fw-bold">Download & Installation</h2>
+        <div class="col-md-8 col-xl-6 mx-auto mt-5 pt-4">
+            <h2 class="mb-3 display-6 text-sm-center fw-bold">Download & Installation</h2>
             <p class="lead mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                 forte-possumus.
@@ -124,13 +161,13 @@ $app->run();</code></pre>
             </div>
         </div>
     </section>
-    <div class="col-md-8 col-xl-6 mx-auto my-6">
+    <div class="col-md-8 col-xl-6 mx-auto my-4 my-md-5 my-xl-6">
         <hr class="d-block w-100"/>
     </div>
     <!-- Features section -->
-    <section id="features" class="px-4 py-5">
+    <section id="features" class="py-5">
         <div class="col-md-8 col-xl-6 mx-auto">
-            <h2 class="mb-3 display-6 fw-bold text-center">Features</h2>
+            <h2 class="mb-3 display-6 fw-bold text-sm-center">Features</h2>
             <p class="lead mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si quae
                 forte-possumus.
@@ -144,7 +181,7 @@ $app->run();</code></pre>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="fw-bold">Performance</h4>
+                            <h4 class="fw-bold"><i class="fa-solid fa-gauge"></i> <span class="px-1">Performance</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
                                 quae
@@ -158,7 +195,7 @@ $app->run();</code></pre>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="fw-bold">Middleware</h4>
+                            <h4 class="fw-bold"><i class="fa-regular fa-circle-dot"></i> <span class="px-1">Middleware</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
                                 quae
@@ -172,7 +209,7 @@ $app->run();</code></pre>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="fw-bold">Routing</h4>
+                            <h4 class="fw-bold"><i class="fa-solid fa-location-pin"></i> <span class="px-1">Routing</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
                                 quae
@@ -186,7 +223,7 @@ $app->run();</code></pre>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="fw-bold">Extensible</h4>
+                            <h4 class="fw-bold"><i class="fa-solid fa-arrow-up-right-dots"></i> <span class="px-1">Extensible</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
                                 quae
@@ -200,7 +237,7 @@ $app->run();</code></pre>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="fw-bold">Easy to setup</h4>
+                            <h4 class="fw-bold"><i class="fa-solid fa-wand-magic-sparkles"></i> <span class="px-1">Easy to setup</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
                                 quae
@@ -214,7 +251,7 @@ $app->run();</code></pre>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="fw-bold">Lightweight</h4>
+                            <h4 class="fw-bold"><i class="fa-solid fa-feather"></i> <span class="px-1">Lightweight</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui est in parvis malis. Si
                                 quae
@@ -229,14 +266,16 @@ $app->run();</code></pre>
     </section>
 </main>
 <!-- Footer -->
-<footer class="border-top mt-7">
+<footer class="position-relative bg-body border-top mt-6" style="z-index:9999;">
     <div class="container px-4 px-lg-5 py-3">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="small text-center text-muted">
-                    This site is hosted with &#10084; by <strong>QuickyPHP</strong>
-                </div>
-            </div>
+        <nav>
+            <p class="small text-center text-muted">
+                <a class="p-2" href="#">Imprint</a>
+                <a class="p-2" href="#">Legal notice</a>
+            </p>
+        </nav>
+        <div class="small text-center text-muted">
+            This site is hosted with &#10084; by <strong>QuickyPHP</strong>
         </div>
     </div>
 </footer>
